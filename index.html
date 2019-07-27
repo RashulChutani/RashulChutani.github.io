@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src='scripts\jquery-3.3.1.min.js'></script>
+            <script>
+
+                    $(document).on("keypress", "input", function(e){
+                        var fullDate = new Date()
+ 
+//convert month to 2 digits
+var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+ 
+var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
+                
+                        if(e.which == 13){
+                
+                            var inputVal = $(this).val();
+                
+                            $('#messages').append(inputVal+"&nbsp"+currentDate+"<br>");
+                
+                        }
+                
+                    });
+                
+                </script>
+        <meta name="google-site-verification" content="r0kzaWjd2QpBJMQSRWpyalElKOJT40G0lkm71MThD7E" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Rashul Chutani WebPage</title>
+        <link rel='stylesheet' href='styles\bootstrap.min.css' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    width:70px;
+    height:70px;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-quora {
+    background: red;
+    color: white;
+}
+            #main{
+                padding-left: 70px;
+                padding-top: 50px;
+            }
+            .full-height{
+                height: 100%;
+                width: 100%;
+            }
+            html, body {
+                height:100%;
+            }
+            #backgroundimage {
+                background-image: url("background.jpg");
+                width: 100%;   
+                height: 180vh; 
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                position: relative;
+            } 
+            body{
+                padding-top: 40px;
+            }
+            #heading{
+                color: aliceblue;
+            }
+            .center {
+                position: absolute;
+                top: 70%;
+                left: 65%;
+                transform: translate(-50%, -50%);
+            }
+            img {
+                margin: auto;
+                position: relative;
+            }
+            #navbar {
+                overflow: auto;
+                background-color: #333;
+                position: fixed; /* Set the navbar to fixed position */
+                top: 0; /* Position the navbar at the top of the page */
+                width: 100%; /* Full width */
+                z-index: 100;
+            }
+            .container {
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+            #comments{
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav class="nav justify-content-center|justify-content-end" id="navbar">
+          <a class="nav-link active" href="#aboutme">About Me</a>
+          <a class="nav-link" href="#bio1">My Achievements</a>
+          <a class="nav-link" href="#bio2">My Blog</a>
+          <a class="nav-link" href="#bio3">My Hobbies</a>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+          <a class="nav-link" href="#comments">Feedback</a>
+          <a class="nav-link" href="#contact">Contact Me</a>
+        </nav>
+        <div id="backgroundimage" class="full-height "></div>
+        <div class="center">
+            <img id="main" src="photo1.jpg" class="thumbnail rounded-circle" height='60%' width="60%" alt="My image" >
+            <h1 class="display-3" id = "heading">Rashul</h1>
+        </div>
+        <!--parallax introduced-->
+        <script>
+                (function(){
+                    var parallax = document.querySelectorAll("#backgroundimage"),
+                    speed = 0.5;
+                window.onscroll = function(){
+                    [].slice.call(parallax).forEach(function(el,i){
+                var windowYOffset = window.pageYOffset,
+                elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
+                el.style.backgroundPosition = elBackgrounPos;
+
+                });
+                };
+                })();
+        </script>
+        <h1 style="text-align: center" class="display-4">Rashul Chutani</h1>
+        <h2 style="text-align: center"><i>The budding developer</i></h2>
+        <div class="jumbotron" id="aboutme">
+            <h1 class="display-3">About me</h1>
+            <hr class="my-2">
+            <p style = "font-size: x-large">I am a student at the Indian Institute of Technology Delhi.
+                I am majoring in Mathematics and Computing and hence belong to the 
+                Mathematics Department IIT Delhi. My research interests lie in the field of 
+                financial algorithms , Machine Learning and optimization techniques.
+                Lately I have developed interest in development and I am pursuing the same.     
+            </p>
+        </div>
+        
+        <div class="jumbotron" id="bio1">
+            <h1 class="display-3" >Scholastic Achievements</h1>
+            <p class="lead">Lay your eyes over my Academic achievements till date</p>
+            <hr class="my-2">
+                <div class="row">
+                    <div class="col-md-6">
+                         <p style = "font-size: x-large" > </p>
+                         <dl class="row">
+                             <dt class="col-sm-3">JEE ADV 2018 AIR 306 <span class="badge badge-success">New</span></dt>
+                             <dd class="col-sm-9">Qualified JEE Advanced 2018 and took admission in IIT Delhi B.Tech Mathematics and computing.</dd>
+                             <dt class="col-sm-3">IPU 2018 AIR-06</dt>
+                             <dd class="col-sm-9">Secured AIR 6 in the entrance examination of IP University,Delhi</dd>
+                             <dt class="col-sm-3">KVPY Fellow 2018</dt>
+                             <dd class="col-sm-9">Qualified KVPY in Class 12</dd>
+                             <dt class="col-sm-3">KVPY Fellow 2017</dt>
+                             <dd class="col-sm-9">Qualified KVPY in Class 11</dd>
+                             <dt class="col-sm-3">ISCO Intellify IIT Delhi AIR-01</dt>
+                             <dd class="col-sm-9">Winner of International Science and Creativity Olympiad 2018 Got a Cash prize worth Rs 5000 and a Laptop</dd>
+                             <dt class="col-sm-3">Olympiads Qualified</dt>
+                             <dd class="col-sm-9">
+                                 <dl class="row">
+                                     <dt class="col-sm-4">NSEC 2018</dt>
+                                     <dd class="col-sm-8">Qualified Homi Bhabha National Standard Examination in Chemistry 2018</dd>
+                                     <dt class="col-sm-4">INChO 2018</dt>
+                                     <dd class="col-sm-8">Appeared for Indian National Chemistry Olympiad</dd>
+                                 </dl>
+                             </dd>
+                         </dl>
+                    </div>
+                    <div class="col-md-6"><img src="main.jpg" class="img-fluid rounded-top" alt="Myself"></div>
+                </div>
+        </div>
+        <div class="jumbotron" id="bio2">
+            <h1 class="display-3">My Blog</h1>
+            <p class="lead"  style="font-size: xx-large">My dreams</p>
+            <hr class="my-2">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="dreams.jpg" class="img-fluid rounded-top" alt="My Dreams">
+                </div>
+                <div class="col-md-8">
+                    <h1>Sample Food from around the world</h1>
+                    <p style="font-size: x-large">I am a big big foodie Thus I would like to eat 
+                        lots and lots of different food from around the world.
+                    This is my biggest dream</p>
+                    <h1>Judge a reality show</h1>
+                    <p  style="font-size: x-large">
+                        I would love to be a judge of a reality show. If given a chance
+                        I will definitely give it a shot.;)
+                    </p>
+                    <h1>Many more to go.....</h1>
+                </div>    
+        <div class="jumbotron" id="bio3">
+            <h1 class="display-3">My Hobbies</h1>
+            <p class="lead"><i>Have a look at what I love to do</i></p>
+            <hr class="my-2">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h1>Web Development</h1>
+                            <p style="font-size: large">Maybe this is obvious otherwise I would have not been making such wonderful pages :p</p>
+                        </li>
+                        <li>
+                            <h1>Playing Cricket</h1>
+                            <p style="font-size: large">This something that has exited me since my childhood and I love watching and playing cricket</p>
+                        </li>
+                    </ul>        
+                </div>
+                <div class="col-md-4">
+                    <img src="hobbies.jpg" class="img-fluid rounded-circle" alt="hobbies">
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h1>Spending Quality time with friends and family</h1>
+                            <p style="font-size: large">This is something I feel must be in the hobby list of every person in this world.
+                            And here you have it in what I love to do</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="comments">
+        <div style = "text-align: center" class="jumbotron">
+            <h1 class="display-3" style="color: blue">Comment Box</h1>
+            <h3 style="color: blueviolet">Wanna leave something?</h3>
+            <div class="form-group">
+              <label for="text"></label>
+              <input type="text" class="form-control" id="feedback" aria-describedby="helpId" placeholder="Add a message and press enter" >
+            </div>
+            <p style="background-color: blue" id="messages"></p>
+        </div>
+        </div>
+        <div class ="container" id="contact" style="text-align: center">
+            <a href="www.facebook.com" class="fa fa-facebook"></a>
+            <a href="https://www.quora.com/profile/Rashul-Chutani?ch=3&share=50243e5a&srid=kmXB" class="fa fa-quora"></a>
+        </div>
+        <script src='scripts\bootstrap.min.js'></script>
+        <div class="container">
+            <a href="index1.html">Find a link to my new website on UPSC preparations</a><br>
+            <h2>Our app is now available on Google Play.</h2>
+            <a href=' https://play.google.com/store/apps/details?id=prep.upsc.ikc.upscprep&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+        </div>
+        <div class="jumbotron">
+            <h1 class="display-3">Stock Advice by Rashul Chutani</h1>
+            <p class="lead">Intrinsic Value of Stocks</p>
+            <hr class="my-2">
+            <p>Analysis of Stocks has 2 strategies namely 
+                <ul>
+                    <li> Technical Analysis</li>
+                    <li> Fundamental Analysis</li>
+                </ul>
+                Studying about Intrinsic Value(Fundamental Analysis) is very important for a long term investor
+            </p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="intrinsic_value.html" role="button">What is Intrinsic Value?</a>
+            </p>
+        </div>
+        <a href="disclaimer.html">Disclaimer!</a>
+    </body>
+</html>
